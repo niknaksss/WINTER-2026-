@@ -1,0 +1,320 @@
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:#f3f4f6;
+  color:#293542;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+button,input{font:inherit}
+button{cursor:pointer}
+.app{
+  max-width:520px;
+  margin:auto;
+  min-height:100vh;
+  padding-bottom:calc(145px + env(safe-area-inset-bottom));
+}
+.content{padding:18px}
+.muted{color:#717b87}
+.small{font-size:13px}
+.center{text-align:center}
+.demo{
+  color:#89919a;
+  text-align:right;
+  padding:4px 18px;
+  font-size:10px;
+}
+.dashboard-header{
+  display:flex;align-items:center;
+  justify-content:space-between;padding:14px 20px
+}
+.dashboard-header button{
+  background:none;border:0;color:#a01875;font-size:24px
+}
+.dashboard-logo{font-size:19px;font-weight:700;color:#a01875}
+.dashboard-welcome{padding:14px 4px 18px}
+.dashboard-welcome h1{
+  font-size:25px;font-weight:650;margin:0 0 6px
+}
+.dashboard-welcome p{color:#717b87;margin:0}
+.dashboard-section{
+  display:flex;justify-content:space-between;
+  align-items:center;margin:22px 0 12px
+}
+.dashboard-section h3{font-size:19px;margin:0}
+.dashboard-course{
+  background:white;border-radius:20px;padding:14px;
+  display:flex;align-items:center;gap:14px;
+  margin-bottom:12px;box-shadow:0 2px 10px #0000000a;
+  cursor:pointer
+}
+.dashboard-course-icon{
+  width:76px;height:78px;flex-shrink:0;
+  border-radius:15px;display:grid;place-items:center;
+  background:#277b91;color:white;
+  font-size:14px;font-weight:700;text-align:center
+}
+.dashboard-course-info{flex:1;min-width:0}
+.dashboard-course-info strong{
+  font-size:14px;line-height:1.4;display:block
+}
+.dashboard-course-info p{
+  font-size:12px;color:#78828c;margin:6px 0 0
+}
+.dashboard-arrow{color:#8d969e;font-size:24px}
+.pink{
+  background:#a01875;color:white;border:0;
+  border-radius:25px;padding:12px 22px
+}
+.dashboard-summary{
+  background:#a01875;color:white;
+  border-radius:22px;padding:20px
+}
+.dashboard-summary-date{
+  text-align:center;font-weight:600;margin-bottom:14px
+}
+.dashboard-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  background:white;color:#293542;
+  border-radius:15px;padding:18px 5px;text-align:center
+}
+.dashboard-stats strong{
+  display:block;font-size:24px;margin-bottom:4px
+}
+.dashboard-stats span{color:#717b87;font-size:12px}
+.dashboard-calendar{
+  display:grid;grid-template-columns:repeat(7,1fr);
+  gap:5px;margin-top:14px
+}
+.calendar-day{
+  background:white;border:1px solid #e4e6e9;
+  border-radius:13px;padding:12px 3px;
+  text-align:center;font-size:12px;color:#717b87;
+  cursor:pointer
+}
+.calendar-day strong{
+  display:block;color:#293542;font-size:17px;margin-top:6px
+}
+.calendar-day.selected{
+  background:#a01875;color:white;border-color:#a01875
+}
+.calendar-day.selected strong{color:white}
+.card{
+  background:white;border-radius:23px;padding:20px;
+  margin:13px 0;box-shadow:0 3px 12px #00000010
+}
+.header{
+  position:sticky;top:0;background:#f3f4f6;z-index:5;
+  padding:20px 18px 12px;
+  display:flex;align-items:center;gap:15px
+}
+.header h2{
+  font-size:19px;margin:0;flex:1;
+  overflow-wrap:anywhere
+}
+.back{
+  border:1px solid #ddd;background:white;
+  border-radius:50%;width:44px;height:44px;
+  flex-shrink:0;font-size:25px
+}
+.banner{
+  height:205px;
+  background:linear-gradient(130deg,#6d7987,#4d7896);
+  border-radius:20px;padding:20px;color:white;
+  display:flex;flex-direction:column;justify-content:end
+}
+.banner h2{font-size:20px;margin:0 0 7px}
+.menu{background:white;margin-top:20px}
+.menu-item{
+  padding:21px 18px;border-bottom:1px solid #e1e1e1;
+  display:flex;align-items:center;gap:14px;
+  cursor:pointer;font-size:16px
+}
+.menu-item span:last-child{
+  margin-left:auto;color:#78828c
+}
+.total{
+  display:flex;justify-content:space-between;
+  align-items:center;font-size:17px
+}
+.total strong{font-size:26px}
+.toggle{
+  display:flex;align-items:center;
+  justify-content:space-between;
+  padding:18px 0;border-bottom:1px solid #ddd
+}
+.toggle input{
+  width:22px;height:22px;accent-color:#1976bd
+}
+.assignment{
+  background:white;padding:19px 20px;
+  border-bottom:1px solid #ddd
+}
+.assignment-title{
+  font-size:16px;font-weight:500;margin-bottom:6px
+}
+.assignment input{
+  width:65px;padding:7px;
+  border:1px solid #ccd2d8;border-radius:8px
+}
+.grade{color:#13884c}
+.empty{text-align:center;padding:85px 25px}
+.empty .emoji{font-size:75px}
+.module{
+  padding:18px;border-bottom:1px solid #ddd;
+  background:white
+}
+.section-title{font-weight:600;margin:25px 0 10px}
+.bottom{
+  position:fixed;
+  bottom:calc(12px + env(safe-area-inset-bottom));
+  left:50%;
+  transform:translateX(-50%);
+  width:min(95%,500px);
+  display:flex;justify-content:space-around;
+  background:#fffffff2;
+  border:1px solid #ddd;
+  border-radius:35px;
+  padding:13px 5px;
+  z-index:10;
+  box-shadow:0 3px 18px #0000000c
+}
+.nav{
+  text-align:center;font-size:11px;
+  cursor:pointer;flex:1
+}
+.nav b{
+  display:block;font-size:22px;margin-bottom:4px
+}
+.active{color:#1676ba}
+@media(max-width:360px){
+  .nav{font-size:10px}
+  .nav b{font-size:19px}
+  .bottom{padding:11px 3px}
+}
+
+/* =====================================
+   RESPONSIVE DESIGN
+   iPhone + iPad
+   ===================================== */
+
+/* iPhone: preserve existing layout */
+@media (max-width: 599px) {
+  .app {
+    max-width: 520px;
+  }
+}
+
+/* iPad portrait and landscape */
+@media (min-width: 600px) {
+
+  .app {
+    max-width: 1100px;
+    padding-bottom: calc(
+      130px + env(safe-area-inset-bottom)
+    );
+  }
+
+  .content {
+    padding: 28px 36px;
+  }
+
+  .dashboard-header {
+    padding: 22px 36px;
+  }
+
+  .dashboard-welcome h1 {
+    font-size: 32px;
+  }
+
+  .dashboard-section h3 {
+    font-size: 22px;
+  }
+
+  /* Course cards in two columns */
+  .dashboard-course {
+    width: calc(50% - 8px);
+    display: inline-flex;
+    vertical-align: top;
+    margin-right: 12px;
+    min-height: 115px;
+  }
+
+  .dashboard-course:nth-of-type(2n) {
+    margin-right: 0;
+  }
+
+  .dashboard-course-icon {
+    width: 68px;
+    height: 76px;
+  }
+
+  .dashboard-course-info strong {
+    font-size: 14px;
+  }
+
+  /* Larger course pages */
+  .header {
+    padding: 24px 36px 16px;
+  }
+
+  .banner {
+    height: 250px;
+  }
+
+  .card {
+    padding: 26px;
+  }
+
+  .assignment {
+    padding: 22px 30px;
+  }
+
+  .module {
+    padding: 24px;
+  }
+
+  /* More spacious calendar */
+  .calendar-day {
+    padding: 18px 8px;
+  }
+
+  .calendar-day strong {
+    font-size: 20px;
+  }
+
+  /* Tablet navigation */
+  .bottom {
+    width: min(92%, 900px);
+    padding: 16px 12px;
+  }
+
+  .nav {
+    font-size: 13px;
+  }
+
+  .nav b {
+    font-size: 25px;
+  }
+}
+
+/* Larger iPad landscape */
+@media (min-width: 1000px) {
+
+  .app {
+    max-width: 1200px;
+  }
+
+  .content {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  .dashboard-course {
+    min-height: 125px;
+  }
+
+  .dashboard-course-info strong {
+    font-size: 15px;
+  }
+}
